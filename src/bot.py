@@ -47,10 +47,11 @@ def run_discord_bot():
             responses.chatbot.reset_chat()
             await message.channel.send("**Info: I have forgotten everything.**")
             print("The CHAT BOT has been successfully reset")
-        elif user_message[0] == '!':
+        elif user_message[0:4] == '陰吉老濕 ':
+            user_message = user_message[5:]
+            await send_message(message, user_message, is_private=False)
+        elif user_message[0] == '?':
             user_message = user_message[1:]
-            await send_message(message, user_message, is_private=True)
-        else:
             await send_message(message, user_message, is_private=False)
 
     client.run(TOKEN)
