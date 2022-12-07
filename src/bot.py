@@ -1,10 +1,6 @@
 import discord
-import json
 import os
 from src import responses
-
-with open('config.json', 'r') as f:
-    data = json.load(f)
 
 
 async def send_message(message, user_message, is_private):
